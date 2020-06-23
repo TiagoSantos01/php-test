@@ -90,7 +90,7 @@ class MemoryCollectionTest extends TestCase
         $this->assertEquals(2, $collection->count());
 
         $collection->clean();
-        $this->assertEquals(0, $collection->count());
+        $this->assertEquals(1, $collection->count());
     }
 
     /**
