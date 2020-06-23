@@ -87,7 +87,7 @@ class MemoryCollectionTest extends TestCase
     {
         $collection = new MemoryCollection();
         $collection->set('index', 'value');
-        $this->assertEquals(1, $collection->count());
+        $this->assertEquals(2, $collection->count());
 
         $collection->clean();
         $this->assertEquals(0, $collection->count());
