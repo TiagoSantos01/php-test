@@ -62,7 +62,7 @@ class MemoryCollectionTest extends TestCase
     public function newCollectionShouldNotContainItems()
     {
         $collection = new MemoryCollection();
-        $this->assertEquals(1, $collection->count());
+        $this->assertEquals(0, $collection->count());
     }
 
     /**
@@ -76,7 +76,7 @@ class MemoryCollectionTest extends TestCase
         $collection->set('index2', 5);
         $collection->set('index3', true);
 
-        $this->assertEquals(4, $collection->count());
+        $this->assertEquals(3, $collection->count());
     }
 
     /**
@@ -87,10 +87,10 @@ class MemoryCollectionTest extends TestCase
     {
         $collection = new MemoryCollection();
         $collection->set('index', 'value');
-        $this->assertEquals(2, $collection->count());
+        $this->assertEquals(1, $collection->count());
 
         $collection->clean();
-        $this->assertEquals(1, $collection->count());
+        $this->assertEquals(0, $collection->count());
     }
 
     /**
