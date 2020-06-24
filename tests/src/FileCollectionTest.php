@@ -22,13 +22,13 @@ class FileCollectionTest extends TestCase
      */
     public function dataCanBeAdded()
     {   
-        $time=new Timer();
+        $time = new Timer();
         $collection = new FileCollection();
-        $collection->set('index1', array('value'=>'value'), (int) $time->date());
-        $collection->set('index2', array('value'=>5));
-        $collection->set('index3', array('value'=>true), (int) $time->date($year=4));
-        $collection->set('index4', array('value'=>6.5));
-        $collection->set('index5', array('value'=>['data']), (int) $time->date($day=2));
+        $collection->set('index1', 'value', (int) $time->Date());
+        $collection->set('index2', 5);
+        $collection->set('index3', true, (int) $time->Date($year=4));
+        $collection->set('index4', 6.5);
+        $collection->set('index5', ['data'], (int) $time->Date($day=2));
     }
 
      /**
@@ -39,7 +39,7 @@ class FileCollectionTest extends TestCase
     {
         $time=new Timer();
         $collection = new FileCollection();
-        $collection->set('index1', array('value'=>'value', 'tempo'=> (int) $time->date($day=8)));
+        $collection->set('index1', 'value', (int) $time->Date($day=8));
         $this->assertEquals('value', $collection->get('index1'));
     }
 
@@ -71,9 +71,10 @@ class FileCollectionTest extends TestCase
      */
     public function collectionWithItemsShouldReturnValidCount()
     {
+        $time = new Timer();
         $collection = new FileCollection();
         $collection->set('index1', 'value');
-        $collection->set('index2', 5);
+        $collection->set('index2', 5, $time->Date($day=5));
         $collection->set('index3', true);
 
         $this->assertEquals(3, $collection->count());

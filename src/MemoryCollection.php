@@ -13,15 +13,18 @@ class MemoryCollection implements CollectionInterface
      * Collection data
      *
      * @var array
+     * @var time
      */
     protected $data;
-
+    protected $time;
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->data = [];
+        $this->time = new Timer();
+
     }
 
     /**
@@ -32,16 +35,19 @@ class MemoryCollection implements CollectionInterface
         if (!$this->has($index)) {
             return $defaultValue;
         }
-
-        return $this->data[$index];
+        if($this->data[$index]['tempo'] == null || $this->time->date() <= $this->data[$index]['tempo']) {
+            return $this->data[$index]['value'];
+        }
+        else
+            return $defaulValue;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function set(string $index, $value)
+    public function set(string $index, $value, $timer =null)
     {
-        $this->data[$index] = $value;
+        $this->data[$index] = array('value'=> $value, 'tempo'=> $timer);
     }
 
     /**
