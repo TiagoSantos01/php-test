@@ -24,7 +24,6 @@ class MemoryCollection implements CollectionInterface
     {
         $this->data = [];
         $this->time = new Timer();
-
     }
 
     /**
