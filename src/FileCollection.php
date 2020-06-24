@@ -76,7 +76,6 @@ class FileCollection implements CollectionInterface
      */
     public function clean()
     {
-        fwrite($this->arquivo, json_encode(array()));
         $this->json=[];
     }
 }
