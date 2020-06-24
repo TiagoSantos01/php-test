@@ -23,17 +23,18 @@ class FileCollection implements CollectionInterface
     public function __construct()
     {
         $this->src_arquivo="CollectionFile.json";
-        $this->arquivo=fopen($this->src_arquivo,"a+");
-        $this->json=(array) json_decode(file_get_contents($this->src_arquivo),true);
+        $this->arquivo=fopen($this->src_arquivo, "a+");
+        $this->json=(array) json_decode(file_get_contents($this->src_arquivo), true);
     }
 
     /**
      * Get the returned Value of the Key
 
      */
-    public function get(string $index,$defaulValue=null )
+    public function get(string $index, $defaulValue = null )
     {
-        if(!$this->has($index)){
+        if(!$this->has($index))
+        {
             return $defaulValue;
         }
     
@@ -46,13 +47,12 @@ class FileCollection implements CollectionInterface
     public function set(string $index, $value)
     {
         fwrite($this->arquivo, json_encode(array($index => $value)));
-        fwrite($this->arquivo,",");
+        fwrite($this->arquivo, ",");
         $this->json[$index] = $value;
     }
 
     /**
      * Check the Keys
-     * 
      */
     public function has(string $index)
     {
@@ -75,5 +75,4 @@ class FileCollection implements CollectionInterface
         fwrite($this->arquivo, json_encode(array()));
         $this->json=[];
     }
-
 }
