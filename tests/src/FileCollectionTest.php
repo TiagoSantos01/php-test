@@ -24,11 +24,11 @@ class FileCollectionTest extends TestCase
     {   
         $time=new Timer();
         $collection = new FileCollection();
-        $collection->set('index1', array('value'=>'value', 'tempo'=> (int) $time->date()));
+        $collection->set('index1', array('value'=>'value'), (int) $time->date());
         $collection->set('index2', array('value'=>5));
-        $collection->set('index3', array('value'=>true, 'tempo'=> (int) $time->date($year=4)));
+        $collection->set('index3', array('value'=>true), (int) $time->date($year=4));
         $collection->set('index4', array('value'=>6.5));
-        $collection->set('index5', array('value'=>['data'], 'tempo'=> (int) $time->date($day=2)));
+        $collection->set('index5', array('value'=>['data']), (int) $time->date($day=2));
     }
 
      /**
