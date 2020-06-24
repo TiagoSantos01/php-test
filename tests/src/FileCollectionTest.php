@@ -1,7 +1,7 @@
 <?php
 namespace Live\Collection;
 
-use PHPUnit\Framework\Testcase;
+use PHPUnit\Framework\TestCase;
 
 class FileCollectionTest extends TestCase
 {
