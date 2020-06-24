@@ -48,7 +48,7 @@ class FileCollection implements CollectionInterface
     {
         $this->json[$index] = $value;
 
-        fwrite($arquivo, array($this->json));
+        fwrite($this->arquivo, array($this->json));
     }
 
     /**
@@ -73,7 +73,7 @@ class FileCollection implements CollectionInterface
     public function clean()
     {
         $this->json=[];
-        fwrite($arquivo,array($this->json));
+        fwrite($this->arquivo,array($this->json));
     }
 }
 ?>
