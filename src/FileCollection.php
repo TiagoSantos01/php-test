@@ -23,7 +23,7 @@ class FileCollection implements CollectionInterface
      */
     public function __construct()
     {
-        $time = new Timer();
+        $this->time = new Timer();
         $this->src_arquivo="CollectionFile.json";
         $this->arquivo=fopen($this->src_arquivo, "a+");
         $this->json=(array) json_decode(file_get_contents($this->src_arquivo), true);
