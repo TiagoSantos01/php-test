@@ -9,7 +9,6 @@ class FileCollection implements CollectionInterface
 {
     /**
      * Collection data
-     * 
      * @var src
      * @var File
      * @var array 
@@ -33,8 +32,7 @@ class FileCollection implements CollectionInterface
      */
     public function get(string $index, $defaulValue = null )
     {
-        if(!$this->has($index))
-        {
+        if(!$this->has($index)) {
             return $defaulValue;
         }
     
