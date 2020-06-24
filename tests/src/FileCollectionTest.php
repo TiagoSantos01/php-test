@@ -21,13 +21,14 @@ class FileCollectionTest extends TestCase
      * @doesNotPerformAssertions
      */
     public function dataCanBeAdded()
-    {
+    {   
+        $time=new Timer();
         $collection = new FileCollection();
-        $collection->set('index1', 'value');
-        $collection->set('index2', 5);
-        $collection->set('index3', true);
-        $collection->set('index4', 6.5);
-        $collection->set('index5', ['data']);
+        $collection->set('index1', array('value','tempo'=>$time->date($hour=5)));
+        $collection->set('index2', array(5,'tempo'=>null));
+        $collection->set('index3', array(true,'tempo'=>$time->date($year=4)));
+        $collection->set('index4', array(6.5,'tempo'=>null));
+        $collection->set('index5', array(['data'],'tempo'=>$time->date($day=2)));
     }
 
      /**
