@@ -46,9 +46,9 @@ class FileCollection implements CollectionInterface
      */
     public function set(string $index,$value)
     {
-        $this->$json[$index] = $value;
+        $this->json[$index] = $value;
 
-        fwrite($arquivo, array($this->$json));
+        fwrite($arquivo, array($this->json));
     }
 
     /**
