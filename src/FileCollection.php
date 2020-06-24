@@ -38,8 +38,8 @@ class FileCollection implements CollectionInterface
         if (!$this->has($index)) {
             return $defaulValue;
         }
-        if($this->json[$index][0]['tempo'] == null || $this->time->Date() <= $this->json[$index][0]['tempo']) {
-            return $this->json[$index][0]['value'];
+        if($this->json[$index]['tempo'] == null || $this->time->Date() <= $this->json[$index]['tempo']) {
+            return $this->json[$index]['value'];
         }
         else
             return $defaulValue;
