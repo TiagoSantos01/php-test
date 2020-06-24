@@ -3,7 +3,6 @@ namespace Live\Collection;
 
 /**
  * File Collection
- * 
  * @package Live\Collection
  */
 class FileCollection implements CollectionInterface
@@ -30,7 +29,7 @@ class FileCollection implements CollectionInterface
 
     /**
      * Get the returned Value of the Key
-     * 
+
      */
     public function get(string $index,$defaulValue=null )
     {
@@ -44,16 +43,16 @@ class FileCollection implements CollectionInterface
     /**
      * Set Values ​​in the Key
      */
-    public function set(string $index,$value)
+    public function set(string $index, $value)
     {
-        fwrite($this->arquivo, json_encode(array($index=>$value)));
+        fwrite($this->arquivo, json_encode(array($index => $value)));
         fwrite($this->arquivo,",");
         $this->json[$index] = $value;
-        
     }
 
     /**
      * Check the Keys
+     * 
      */
     public function has(string $index)
     {
@@ -73,7 +72,8 @@ class FileCollection implements CollectionInterface
      */
     public function clean()
     {
-        fwrite($this->arquivo,json_encode(array()));
+        fwrite($this->arquivo, json_encode(array()));
         $this->json=[];
     }
+
 }
