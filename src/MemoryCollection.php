@@ -35,17 +35,17 @@ class MemoryCollection implements CollectionInterface
         if (!$this->has($index)) {
             return $defaultValue;
         }
-        if($this->data[$index]['tempo'] == null || $this->time->date() <= $this->data[$index]['tempo']) {
+        if ($this->data[$index]['tempo'] == null || $this->time->date() <= $this->data[$index]['tempo']) {
             return $this->data[$index]['value'];
-        }
-        else
+        } else {
             return $defaulValue;
+        }
     }
 
     /**
      * {@inheritDoc}
      */
-    public function set(string $index, $value, $timer =null)
+    public function set(string $index, $value, $timer = null)
     {
         $this->data[$index] = array('value'=> $value, 'tempo'=> $timer);
     }
