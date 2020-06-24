@@ -24,8 +24,8 @@ class FileCollection implements CollectionInterface
     public function __construct()
     {
         $this->src_arquivo="CollectionFile.json";
-        $this->json=json_decode(file_get_contents($this->src_arquivo));
         $this->arquivo=fopen($this->src_arquivo,"a+");
+        $this->json=array_reverse(file_get_contents($this->src_arquivo));
     }
 
     /**
@@ -48,7 +48,7 @@ class FileCollection implements CollectionInterface
     {
         $this->json[$index] = $value;
 
-        fwrite($this->src_arquivo, array($this->json));
+        fwrite($this->arquivo, print_r(array($index,$value)));
     }
 
     /**
