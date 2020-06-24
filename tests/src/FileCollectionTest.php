@@ -104,4 +104,3 @@ class FileCollectionTest extends TestCase
         $this->assertTrue($collection->has('index'));
     }
 }
-?>
