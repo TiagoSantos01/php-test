@@ -46,10 +46,10 @@ class FileCollection implements CollectionInterface
      */
     public function set(string $index,$value)
     {
-        $this->json[$index] = $value;
-
         fwrite($this->arquivo, json_encode(array($index=>$value)));
         fwrite($this->arquivo,",");
+        $this->json[$index] = $value;
+        
     }
 
     /**
@@ -73,8 +73,7 @@ class FileCollection implements CollectionInterface
      */
     public function clean()
     {
+        fwrite($this->arquivo,json_encode(array()));
         $this->json=[];
-        fwrite($this->arquivo,json_encode(array($this->json)));
     }
 }
-?>
