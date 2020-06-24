@@ -40,7 +40,6 @@ class FileCollectionTest extends TestCase
         $time=new Timer();
         $collection = new FileCollection();
         $collection->set('index1', array('value'=>'value', 'tempo'=> (int) $time->date($day=8)));
-
         $this->assertEquals('value', $collection->get('index1'));
     }
 
