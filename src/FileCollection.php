@@ -21,7 +21,7 @@ class FileCollection implements CollectionInterface
     /**
      * Constructor
      */
-    public function _construct()
+    public function __construct()
     {
         $this->src_arquivo="CollectionFile.json";
         $this->arquivo=fopen($this->src_arquivo,"a+");
