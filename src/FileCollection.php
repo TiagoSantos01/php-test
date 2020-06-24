@@ -52,7 +52,7 @@ class FileCollection implements CollectionInterface
     {
         fwrite($this->arquivo, json_encode(array($index => array('value'=> $value, 'tempo'=> $timer))));
         fwrite($this->arquivo, ",");
-        $this->json[$index] = $value;
+        $this->json[$index] = array($index => array('value'=> $value, 'tempo'=> $timer));
     }
 
     /**
