@@ -37,6 +37,7 @@ class FileCollectionTest extends TestCase
      */
     public function dataCanBeRetrieved()
     {
+        $time=new Timer();
         $collection = new FileCollection();
         $collection->set('index1', array('value'=>'value', 'tempo'=> (int) $time->date($day=8)));
 
