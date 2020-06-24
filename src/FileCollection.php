@@ -11,7 +11,7 @@ class FileCollection implements CollectionInterface
      * Collection data
      * @var src
      * @var File
-     * @var array 
+     * @var array
      */
     protected $src_arquivo;
     protected $arquivo;
@@ -30,9 +30,9 @@ class FileCollection implements CollectionInterface
      * Get the returned Value of the Key
 
      */
-    public function get(string $index, $defaulValue = null )
+    public function get(string $index, $defaulValue = null)
     {
-        if(!$this->has($index)) {
+        if (!$this->has($index)) {
             return $defaulValue;
         }
     
