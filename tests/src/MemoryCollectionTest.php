@@ -25,10 +25,10 @@ class MemoryCollectionTest extends TestCase
     {
         $time=new Timer();
         $collection = new MemoryCollection();
-        $collection->set('index1', 'value', $time->Date($year=2));
-        $collection->set('index2', 5, $time->Date($minute=55));
+        $collection->set('index1', 'value', $time->date($year = 2));
+        $collection->set('index2', 5, $time->date($minute = 55));
         $collection->set('index3', true);
-        $collection->set('index4', 6.5, $time->Date());
+        $collection->set('index4', 6.5, $time->date());
         $collection->set('index5', ['data']);
     }
 
@@ -74,7 +74,7 @@ class MemoryCollectionTest extends TestCase
     {
         $time = new Timer();
         $collection = new MemoryCollection();
-        $collection->set('index1', 'value', $time->Date($month=7));
+        $collection->set('index1', 'value', $time->date($month = 7));
         $collection->set('index2', 5);
         $collection->set('index3', true);
 

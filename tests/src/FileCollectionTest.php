@@ -21,14 +21,14 @@ class FileCollectionTest extends TestCase
      * @doesNotPerformAssertions
      */
     public function dataCanBeAdded()
-    {   
+    {
         $time = new Timer();
         $collection = new FileCollection();
-        $collection->set('index1', 'value', (int) $time->Date());
+        $collection->set('index1', 'value', (int) $time->date());
         $collection->set('index2', 5);
-        $collection->set('index3', true, (int) $time->Date($year=4));
+        $collection->set('index3', true, (int) $time->date($year = 4));
         $collection->set('index4', 6.5);
-        $collection->set('index5', ['data'], (int) $time->Date($day=2));
+        $collection->set('index5', ['data'], (int) $time->date($day = 2));
     }
 
      /**
@@ -39,7 +39,7 @@ class FileCollectionTest extends TestCase
     {
         $time=new Timer();
         $collection = new FileCollection();
-        $collection->set('index1', 'value', (int) $time->Date($day=8));
+        $collection->set('index1', 'value', (int) $time->date($day = 8));
         $this->assertEquals('value', $collection->get('index1'));
     }
 
@@ -74,7 +74,7 @@ class FileCollectionTest extends TestCase
         $time = new Timer();
         $collection = new FileCollection();
         $collection->set('index1', 'value');
-        $collection->set('index2', 5, $time->Date($day=5));
+        $collection->set('index2', 5, $time->date($day = 5));
         $collection->set('index3', true);
 
         $this->assertEquals(3, $collection->count());
